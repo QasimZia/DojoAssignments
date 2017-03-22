@@ -1,0 +1,36 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 950px;
+    background-color: teal;
+    margin: 0px auto;
+    padding: 20px;
+    color: white;
+}
+
+p {
+    font-size: 20px;
+}
+
+span {
+    color: black;
+}
+
+#yellow-span {
+    color: yellow;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ul {
+    margin-bottom: 10px;
+    background-color: lightgrey;
+    color: black;
+    padding: 20px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
