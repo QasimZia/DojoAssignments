@@ -8,7 +8,6 @@
     width: 970px;
     background-color: #245176;
     margin: 0px auto;
-    padding: 10px;
 }
 
 .header {
@@ -142,15 +141,10 @@
 }
 
 .sub-content2 {
-    width: 970px;
     padding: 10px;
-    position: relative;
-    right: 10px;
     background-color: white;
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
     box-shadow: 0px -3px 0px 0px #183853;
 }
 
@@ -182,9 +176,7 @@
 
 .footer {
     background: linear-gradient(#245176, #3373ab);
-    width: 991px;
-    position: absolute;
-    right: 10px;
+    width: 970px;
 }
 
 .footer-menu ul {
