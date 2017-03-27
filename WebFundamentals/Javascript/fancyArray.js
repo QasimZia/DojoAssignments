@@ -7,4 +7,4 @@ function fancyArray(arr, symbol) {
 }
 
 
-fancyArray(["jack","jill","will","bill"], "->");
+fancyArray(["jack","jill","will","bill"], "=>");
