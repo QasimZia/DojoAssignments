@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    margin: 0px auto;
+    padding: 15px;
+    width: 950px;
+}
+
+.body {
+    margin: 0px auto;
+    width: 200px;
+    padding: 5px;
+}
