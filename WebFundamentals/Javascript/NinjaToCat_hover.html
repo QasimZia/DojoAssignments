@@ -8,21 +8,14 @@
         <script type='text/javascript'>
             $(document).ready(function() {
 
-                $('img').click(function() {
-
-                    //if statement checking whether img src is orginial image
-                    if($(this).attr('src') == $(this).attr('ori')) {
-                        //if img is original change to alt
-                        $(this).attr('src', $(this).attr('data-alt-src'));
-                    }
-                    //check if img has already been changed to alt
-                    else if($(this).attr('src') == $(this).attr('data-alt-src')) {
-                        //if changed to alt change to orginial
+                $('img').hover(
+                    function() {
+                       $(this).attr('src', $(this).attr('data-alt-src'));
+                    }, function(){
                         $(this).attr('src', $(this).attr('ori'));
-                    }
-                    
-                });
+                    });
             });
+            
         </script>
     </head>
     <body>
