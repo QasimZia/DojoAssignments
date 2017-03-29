@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact Card</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="ContactCard_styles.css" rel="stylesheet">
+        <script type='text/javascript'>
+            $(document).ready(function() {
+
+                $('.info_form').submit(function() {
+                    var firstName = $('#first_name').val();
+                    var lastName = $('#last_name').val();
+                    var description = $('#description').val();
+
+                    $('.card_container').append('<div class="contact_card"><div class="name_info"><h2>'+ firstName + ' ' + lastName + '</h2></div><br><p>Click for description!</p><div class="description_container">' + description + '</div></div>');
+                    
+                    $('.description_container').hide();
+
+                    $('input[type=text]').val('');
+                    $('textarea').val('');
+
+                    return false;
+                });
+
+                $(document).on('click', '.contact_card', function() {
+                    $(this).children().toggle();
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='info_form_container'>
+                <h1>Contact Card</h1>
+                <form class='info_form'>
+                    <label for='first_name'>First Name: </label>
+                    <input type='text' id='first_name' name='first_name'>
+                    <br>
+                    <label for='last_name'>Last Name: </label>
+                    <input type='text' id='last_name' name='last_name'>
+                    <br>
+                    <p>Description: </p><br>
+                    <textarea name='description' id='description' cols='50' rows='5' placeholder='Enter Description'></textarea>
+                    <br>
+                    <input type='submit' value='Add User'>
+                </form>
+            </div>
+            <div class='card_container'>
+            </div>
+        </div>
+    </body>
+</html>
