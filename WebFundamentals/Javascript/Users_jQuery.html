@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Users</title>
+        <meta charset="UTF-8">
+        <link href="users_jQuery_styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type='text/javascript'>
+            $(document).ready(function() {
+
+                $('form').submit(function() {
+                    //assign values from element fields to variables
+                    var firstName = $('#first_name').val();
+                    var lastName = $('#last_name').val();
+                    var email = $('#email').val();
+                    var contactNum = $('#contact_num').val();
+
+                    //append data from variables onto tables
+                    $('tbody').append('<tr><td>' + firstName + '</td><td>' +  lastName + '</td><td>' + email + '</td><td>' + contactNum + '</td></tr>');
+
+                    //clear input fields after passing information
+                    $('input[type=text]').val('');
+
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='table'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>Contact #</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class='form'>
+                <h1>Add User</h1>                
+                <form>
+                    <label for='first_name'>First Name: </label>
+                    <input type='text' id='first_name' name='first_name' placeholder='First Name'>
+                    <br>
+                    <label for='last_name'>Last Name: </label>
+                    <input type='text' id='last_name' name='last_name' placeholder='Last Name'>
+                    <br>
+                    <label for='email'>Email: </label>
+                    <input type='text' id='email' name='email' placeholder='Email'>
+                    <br>
+                    <label for='contact_num'>Contact #: </label>
+                    <input type='text' id='contact_num' name='contact_num' placeholder='Contact #'>
+                    <br>
+                    <input type='submit'>
+                </form>
+            </div>
+        </div>
+    
+    </body>
+</html>

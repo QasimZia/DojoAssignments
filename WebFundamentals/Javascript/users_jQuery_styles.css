@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0px auto;
+    padding: 15px;
+
+}
+
+table, th, td {
+    border: 1px solid darkgrey;
+    width: 480px;
+    white-space: nowrap;
+    /*overflow: hidden;*/
+    margin-bottom: 40px;
+    padding: 3px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    width: 400px;
+    display: inline-block;
+    text-align: left;
+}
+
+form {
+    width: 390px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: right;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
+h1 {
+    border-bottom: 2px solid darkgrey;
+}

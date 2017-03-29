@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Arena</title>
+        <meta charset="UTF-8">
+        <link href="DojoArena_styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type='text/javascript'>
+
+            $(document).ready(function() {
+
+                $('#beach').hover(function() {
+                    $('.wrapper').css('background-image', 'url("dojo_arena_photos-master/beach.jpg")');
+                });
+
+                $('#planet').hover(function() {
+                    $('.wrapper').css('background-image', 'url("dojo_arena_photos-master/earth.jpg")');
+                });
+
+                $('#dojo').hover(function() {
+                    $('.wrapper').css('background-image', 'url("dojo_arena_photos-master/dojo.jpg")');
+                });
+
+                $('#forest').hover(function() {
+                    $('.wrapper').css('background-image', 'url("dojo_arena_photos-master/forest.jpg")');
+                });
+
+                $('#matrix').hover(function() {
+                    $('.wrapper').css('background-image', 'url("dojo_arena_photos-master/matrix.jpg")');
+                });
+
+                $('#snow').hover(function() {
+                    $('.wrapper').css('background-image', 'url("dojo_arena_photos-master/snow.jpg")');
+                });
+
+                $('button').click(function() {
+                    $('.selection-menu').replaceWith('<div class="player-select-menu"><h1>Select Players: </h1><div class="nav-menu-background"><form class="player-select1"><select name="ninja1"><option value="donny" selected="selected">Donny</option><option value="leo">Leo</option><option value="mikey">Mikey</option><option value="raphael">Raphael</option></select></form><form class="player-select2"><select name="ninja2"><option value="dojo_arena_photos-master/donny.png">Donny</option><option value="dojo_arena_photos-master/leo.png">Leo</option><option value="dojo_arena_photos-master/mikey.png">Mikey</option><option value="dojo_arena_photos-master/raphael.png">Raphael</option></select></form></div></div>');
+                });
+
+                $(document).on('change', '.player-select1', function() {
+                    var selection = $('.player-select1').find(':selected').text();
+                    
+                    if(selection === "Leo") {
+                        $('.imageLeft').replaceWith('<div class="imageLeft"><img src="dojo_arena_photos-master/leo.png" alt="leo" width="200" height="300"></div>');
+                    } else if(selection === "Donny") {
+                        $('.imageLeft').replaceWith('<div class="imageLeft"><img src="dojo_arena_photos-master/donny.png" alt="donny" width="200" height="300"></div>');
+                    } else if(selection === "Raphael") {
+                        $('.imageLeft').replaceWith('<div class="imageLeft"><img src="dojo_arena_photos-master/raphael.png" alt="raphael" width="200" height="300"></div>');
+                    } else if(selection === "Mikey") {
+                        $('.imageLeft').replaceWith('<div class="imageLeft"><img src="dojo_arena_photos-master/mikey.png" alt="mikey" width="200" height="300"></div>');
+                    }
+                    
+                });
+
+                $(document).on('change', '.player-select2', function() {
+                    var selection = $('.player-select2').find(':selected').text();
+                    
+                    if(selection === "Leo") {
+                        $('.imageRight').replaceWith('<div class="imageRight"><img src="dojo_arena_photos-master/leo.png" alt="leo" width="200" height="300"></div>');
+                    } else if(selection === "Donny") {
+                        $('.imageRight').replaceWith('<div class="imageRight"><img src="dojo_arena_photos-master/donny.png" alt="donny" width="200" height="300"></div>');
+                    } else if(selection === "Raphael") {
+                        $('.imageRight').replaceWith('<div class="imageRight"><img src="dojo_arena_photos-master/raphael.png" alt="raphael" width="200" height="300"></div>');
+                    } else if(selection === "Mikey") {
+                        $('.imageRight').replaceWith('<div class="imageRight"><img src="dojo_arena_photos-master/mikey.png" alt="mikey" width="200" height="300"></div>');
+                    }
+                    
+                });
+
+                //$('.player-select').click(function() {
+                //    console.log();
+                //});
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='selection-menu'>
+                <h1>Select Area</h1>
+                <div class='nav-menu-background'>
+                    <div class='button-top'>
+                        <button id='beach'>Beach</button>
+                        <button id='planet'>Planet</button>
+                        <button id='dojo'>Dojo</button>
+                    </div>
+                    <div class='button-bottom'>
+                        <button id='forest'>Forest</button>
+                        <button id='matrix'>Matrix</button>
+                        <button id='snow'>Snow</button>
+                    </div>
+                </div>
+            </div>
+            <div class='imageLeft'>
+                
+            </div>
+            <div class='imageRight'>
+            </div>
+        </div>
+    
+    </body>
+</html>

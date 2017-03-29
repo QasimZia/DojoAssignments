@@ -1,0 +1,102 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    margin: 0px auto;
+    margin-top: 50px;
+    width: 1440px;
+    height: 800px;
+    background-color: black;
+    border: 10px solid #808080;
+    background-size: 100% 100%;
+}
+
+.selection-menu {
+    width: 400px;
+    height: 220px;
+    background-color: #a3a4a6;
+    border-radius: 10px;
+    border: 5px solid #808080;
+    margin: auto;
+    position: relative;
+    top: 200px;
+    padding: 10px;
+}
+
+h1 {
+    color: #eca200;
+    text-align: center;
+    position: relative;
+    top: 40px;
+    font-size: 45px;
+    text-shadow: 2px 2px 0px white;
+}
+
+.nav-menu-background {
+    width: 350px;
+    height: 100px;
+    margin: 0px auto;
+    position: relative;
+    top: 40px;
+    text-align: center;
+}
+
+.button-top {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+button {
+    width: 110px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.player-select1 {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.player-select2 {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.player-select-menu {
+    width: 400px;
+    height: 220px;
+    background-color: rgba(163,164,166, .7);
+    border-radius: 10px;
+    border: 5px solid #808080;
+    margin: auto;
+    position: relative;
+    top: 200px;
+    padding: 10px;
+}
+
+.imageLeft {
+    width: 230px;
+    height: 330px;
+    position: relative;
+    left: 200px;
+    top: 220px;
+    display: inline-block;
+}
+
+.imageRight {
+    width: 230px;
+    height: 330px;
+    position: relative;
+    left: 765px;
+    top: 220px;
+    display: inline-block;
+}
+
+#dojo {
+    
+}
