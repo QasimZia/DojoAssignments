@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Weather Forecast</title>
+        <link rel='stylesheet' href='WeatherAPI_styles.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $('form').submit(function() {
+
+                    var city = $('#city').val();
+
+                    $.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&&appid=a3457d09b4aeff139fb95f24d50872bc&units=imperial`, function(res) {
+                        console.log(res);
+                        $('.placeholder').html(`
+                            <h4>The temperature in: <h1>${city}</h1></h4> ${res.main.temp}&degF`);
+                    }, 'json');
+
+                    $('input[type=text]').val('');
+
+                    return false;
+                });
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='main-content'>
+                <h1> Weather Forecast </h1>
+            <form>
+                <p>Please input city to check forecast</p>
+                <input type='text' id='city' name='city'>
+                <input type='submit' value='Search Weather'>
+            </form>
+            <div class='placeholder'>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

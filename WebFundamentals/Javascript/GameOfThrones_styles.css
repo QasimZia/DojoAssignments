@@ -1,0 +1,47 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 1500px;
+    margin: 0px auto;
+    padding: 15px;
+}
+
+.header {
+    text-align: center;
+    margin: 15px;
+}
+
+.images-header {
+    width: 1150px;
+    margin: 0px auto;
+    border: 2px solid dimgray;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.house-details {
+    width: 750px;
+    height: 200px;
+    margin: 15px auto;
+    border: 2px solid dimgray;
+    padding: 15px;
+}
+
+.house {
+    margin-top: 15px;
+    width: 710px;
+    height: 200px;
+    padding: 20px;
+}
+
+.house p {
+    margin: 15px;
+}
+
+span {
+    font-weight: bold;
+}

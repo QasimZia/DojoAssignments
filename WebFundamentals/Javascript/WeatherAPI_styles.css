@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 0px auto;
+    padding: 15px;
+}
+
+.main-content {
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+    border-bottom: 3px solid dimgrey;
+    text-align: center;
+}
+
+form {
+    margin-bottom: 25px;
+}
+
+.placeholder {
+    font-weight: bold;
+}

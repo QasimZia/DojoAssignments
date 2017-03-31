@@ -7,24 +7,32 @@
         <link href="ContactCard_styles.css" rel="stylesheet">
         <script type='text/javascript'>
             $(document).ready(function() {
+                var x = 0;
+                var y = 0;
+                var descArr = [];
 
                 $('.info_form').submit(function() {
+
                     var firstName = $('#first_name').val();
                     var lastName = $('#last_name').val();
-                    var description = $('#description').val();
+                    descArr[x] = $('#description').val();
 
-                    $('.card_container').append('<div class="contact_card"><div class="name_info"><h2>'+ firstName + ' ' + lastName + '</h2></div><br><p>Click for description!</p><div class="description_container">' + description + '</div></div>');
-                    
-                    $('.description_container').hide();
+                    $('.card_container').append('<div class="contact_card"><div class="name_info"><h2>'+ firstName + ' ' + lastName + '</h2></div><br><p>Click for description!</p></div>');
 
                     $('input[type=text]').val('');
                     $('textarea').val('');
+
+
+                    x++;
 
                     return false;
                 });
 
                 $(document).on('click', '.contact_card', function() {
-                    $(this).children().toggle();
+
+                    $(this).replaceWith('<div class="contact_card">' + descArr[y] + '</div>');
+
+                    y++;
                 });
 
             });

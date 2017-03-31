@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Pokedex</title>
+        <link rel='stylesheet' href='pokedex_styles.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                //for loop to append images into appropriate div
+                for(var x = 1; x <= 151; x++) {
+                    $('.pokemon-images').append('<img id="' + x + '" src="http://pokeapi.co/media/img/' + x +'.png" alt="pokemon">');
+                }
+
+                //function to make sidebar scroll with window
+                $(function() {
+                    //declare variable to store class information
+                    var info = $('.info-display');
+                    var infoHomeY = info.offset().top;
+                    var isFixed = false;
+                    var $w = $(window);
+                    $w.scroll(function() {
+                        var scrollTop = $w.scrollTop();
+                        var shouldBeFixed = scrollTop > infoHomeY;
+                        if (shouldBeFixed && !isFixed) {
+                            info.css({
+                                position: 'fixed',
+                                top: 0,
+                                left: info.offset().left,
+                                width: info.width()
+                            });
+                            isFixed = true;
+                        }
+                        else if (!shouldBeFixed && isFixed)
+                        {
+                            info.css({
+                                position: 'static'
+                            });
+                            isFixed = false;
+                        }
+                    });
+                });
+
+                $(document).on('click', 'img', function() {
+                    $.get(`http://pokeapi.co/api/v1/pokemon/${$(this).attr('id')}/`, function(res) {
+                        var typesArr = [];
+
+                        for(var x = 0; x < res.types.length; x++) {
+                            typesArr[x] = res.types[x].name;
+                        }
+
+                        $('.info-display').html(`
+                            <h1>${res.name}</h1>
+                            <img src="http://pokeapi.co/media/img/${res.national_id}.png">
+                            <br>
+                            <p class='types_list_header'>Types</p>
+                            <h3>Height</h3>
+                            <p>${res.height}</p>
+                            <h3>Weight</h3>
+                            <p>${res.weight}</p>
+                        `);
+
+                        if(typesArr[1] != null) {
+                            $('.types_list_header').after(`
+                            <ul class='types_list'>
+                                <li>${typesArr[0]}</li>
+                                <li>${typesArr[1]}</li>
+                            </ul>
+                            `)
+                        } else {
+                            $('.types_list_header').after(`
+                            <ul class='types_list'>
+                                <li>${typesArr[0]}</li>
+                            </ul>
+                            `);
+                        }
+
+                    }, 'json');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='pokemon-images'>
+            </div>
+            <div class='info-display'>
+            </div>
+        </div>
+    </body>
+</html>
