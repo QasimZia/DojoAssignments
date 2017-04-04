@@ -1,0 +1,15 @@
+def dictInTupOut(dict):
+
+    tupe = []
+    for key,data in dict.items():
+        tupe.append((key, data))
+
+    print tupe
+
+dict = {
+  "Speros": "(555) 555-5555",
+  "Michael": "(999) 999-9999",
+  "Jay": "(777) 777-7777"
+}
+
+dictInTupOut(dict)
