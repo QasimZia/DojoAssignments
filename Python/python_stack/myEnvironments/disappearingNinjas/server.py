@@ -10,6 +10,13 @@ def index():
 @app.route('/ninja')
 def ninja():
 
-    return render_template('ninjas.html')
+    col = True
+    return render_template('ninjas.html', col = col)
+
+@app.route('/ninja/<nColor>')
+def ninjaColor(nColor):
+    print ("here")
+
+    return render_template('ninjas.html', nColor = nColor)
 
 app.run(debug=True)

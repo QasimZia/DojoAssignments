@@ -11,6 +11,18 @@
     </script>
 </head>
 <body>
-    <img src='{{ url_for('static', filename='tmnt.png') }}'>
+    {% if col: %}
+        <img src='{{ url_for('static', filename='tmnt.png')}}'> 
+    {% elif nColor == 'Yellow' or nColor == 'yellow': %}
+        <img src='{{ url_for('static', filename='michelangelo.jpg') }}' alt='michelangelo'>
+    {% elif nColor == 'Blue' or nColor == 'blue': %}
+        <img src='{{ url_for('static', filename='leonardo.jpg') }}' alt='leonardo'>
+    {% elif nColor == 'Purple' or nColor == 'purple': %}
+        <img src='{{ url_for('static', filename='donatello.jpg')}}' alt='donatello'>
+    {% elif nColor == 'Red' or nColor == 'red': %}
+        <img src='{{ url_for('static', filename='raphael.jpg')  }}' alt='raphael'>
+    {% else %}
+        <img src='{{ url_for('static', filename='notapril.jpg') }}' alt='not april'>
+    {% endif %}
 </body>
 </html>
