@@ -1,0 +1,13 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+.header {
+    width: 600px;
+}
