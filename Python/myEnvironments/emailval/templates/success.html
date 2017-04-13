@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Success!</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+    <style>
+        fieldset {
+            width: 700px;
+        }
+        .inner {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </h1>
+    <fieldset>
+        <legend>Emails Entered</legend>
+            {% for email in emails %}
+                <fieldset class='inner'>
+                    <p>Email: {{email["email"]}} | Time Entered: {{email["created_at"]}}</p>
+                </fieldset>
+            {% endfor %}
+    </fieldset>        
+</body>
+</html>
