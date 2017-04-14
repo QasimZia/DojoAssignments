@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Coding Dojo WALL</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <h1>Coding Dojo Wall | Welcome {{session["logged_name"]}}
+        <a href="">Log out button - TO DO</a>
+    </h1>
+    <h2> POST A MESSAGE </h2>
+    <form action="/todo" method="POST">
+        <textarea name="message" rows="5" cols="100"</textarea>
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>
