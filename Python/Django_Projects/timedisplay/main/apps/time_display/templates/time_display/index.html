@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>| | Time Display | |</title>
+    {% load staticfiles %}
+    <link rel='stylesheet' href='{% static 'time_display/css/styles.css' %}'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+    <style>
+        .header {
+            text-align: center;
+        }
+
+        fieldset {
+            position: relative;
+            top: 100px;
+            left: 680px;
+            width: 500px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 96px;
+        }
+    </style>
+</head>
+<body>
+    <div class='header'>
+        <h1>The Time and Date is:</h1>
+    </div>
+    <div class='center'>
+        <fieldset>
+            <p>{{time}}</p>
+        </fieldset>
+    </div>
+</body>
+</html>
