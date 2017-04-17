@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Surprise!</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+
+    <p>Oh I guess you found them</p>
+    {% load staticfiles %}
+    {% if not isColor %}
+        <a href='/'><img src='{% static 'disappear/images/tmnt.png' %}' alt='ninjas'></a>
+    {% elif color == "blue" or color == "Blue" %}
+        <a href='/'><img src='{% static 'disappear/images/leonardo.jpg' %}' alt='leo'></a>
+    {% elif color == "orange" or color == "Orange" %}
+        <a href='/'><img src='{% static 'disappear/images/michelangelo.jpg' %}' alt='mike'></a>
+    {% elif color == "red" or color == "Red" %}
+        <a href='/'><img src='{% static 'disappear/images/raphael.jpg' %}' alt='raph'></a>
+    {% elif color == "purple" or color == "Purple" %}
+        <a href='/'><img src='{% static 'disappear/images/donatello.jpg' %}' alt='don'></a>
+    {% else %}
+        <a href='/'><img src='{% static 'disappear/images/notapril.jpg' %}' alt='Not April'></a>
+        <h1>You thought</h1>
+    {% endif %}
+
+</body>
+</html>
