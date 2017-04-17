@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Result</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <h1>Here is your random image today:</h1>
+    {% load staticfiles %}
+    {% if number > 0 and number <= 10 %}
+        <img src="{% static 'land/images/snow.jpeg' %}" alt='snow'>
+    {% elif number >= 11 and number <= 20 %}
+        <img src="{% static 'land/images/dessert.jpg' %}" alt='dessert'>
+    {% elif number >= 21 and number <= 30 %}
+        <img src="{% static 'land/images/forest.jpeg' %}" alt='forest'>
+    {% elif number >= 31 and number <= 40 %}
+        <img src="{% static 'land/images/grapes.jpg' %}" alt='grapes'>
+    {% elif number >= 41 and number <= 50 %}
+        <img src="{% static 'land/images/tropics.jpg' %}" alt='tropics'>
+    {% endif %}
+</body>
+</html>
