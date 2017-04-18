@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Books</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+    <style>
+        .wrapper {
+            margin: 0px auto;
+            width: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <fieldset>
+            <table style='border:1px solid black;'>
+                <thead>
+                    <th>ID</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                </thead>
+                <tbody>
+                    {% for item in query %}
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.author}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.category}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Add A Book</legend>
+            <form action='/process' method='post'>
+            {% csrf_token %}
+                <p>Title:</p>
+                <input type='text' name='title'>
+                <hr>
+                <label for='category'>Category: </label>
+                <input type='text' name='category'>
+                <label for='author'>Author: </label>
+                <input type='text' name='author'>
+                <hr>
+                <input type='submit' name='submit'>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>
