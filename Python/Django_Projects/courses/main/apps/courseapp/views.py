@@ -4,7 +4,7 @@ from apps.courseapp.models import Courses
 # Create your views here.
 def index(request):
     context = {
-        'query': Courses.objects.all(),
+        'result': Courses.objects.all(),
     }
 
     return render(request, 'courseapp/index.html', context)
@@ -17,13 +17,14 @@ def create(request):
 def deleteConfirm(request, id):
     context =  {
      
-        'query': Courses.objects.get(id=id)
+        'result': Courses.objects.get(id=id)
 
     }
 
-    print (context['query'].name)
     return render(request, 'courseapp/destroyconfirm.html', context)
 
-def destroy(request):
-    pass
+def destroy(request, id):
+    Courses.objects.filter(id = id).delete()
+
+    return redirect("/")
     
