@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Courses</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .wrapper {
+            width: 25%;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        .lower {
+            padding: 15px;
+        }
+
+        fieldset table {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <fieldset>
+            <legend>Add a new course</legend>
+            <form action='process/create' method='post'>
+                {% csrf_token %}
+                <label for='name'>Name:</label>
+                <input type='text' name='name'>
+                <hr>
+                <p>Description:<p>
+                <textarea rows='5' cols='61' name='desc'></textarea>
+                <hr>
+                <input type='submit' name='submit'>
+            </form>
+        </fieldset>
+
+        <fieldset class='lower'>
+            <table>
+                <thead>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    {% for item in query %}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.desc}}</td>
+                        <td>{{item.created_at}}</td>
+                        <td><a href='courses/destroy/{{item.id}}'>remove</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+    </div>
+</body>
+</html>
