@@ -3,7 +3,7 @@ from django.db import models
 #UserManager
 class UserManager(models.Manager):
     def register(self, postData):
-        #vcheck if email exists in database and catch DoesNotExist error if it doesnt
+        #check if email exists in database and catch DoesNotExist error if it doesnt
         try:
             preExist = self.get(email = postData)
         except self.model.DoesNotExist:
