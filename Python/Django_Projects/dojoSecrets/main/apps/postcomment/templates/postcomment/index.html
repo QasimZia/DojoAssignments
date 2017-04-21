@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Dojo Secrets</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .wrapper {
+            width: 80%;
+            margin: 0px auto;    
+        }
+
+        .header {
+            padding: 15px;
+        }
+
+        .header h1 {
+            margin-bottom: 10px;
+        }
+
+        .header form input{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='header'>
+            <h1>Secrets. Current User: {{request.session.logged_user}}</h1>
+            <form action='{% url "comment:postComment" %}' method='post'>
+                {% csrf_token %}
+                <textarea rows='5' cols='50' name='comment'></textarea>
+                <input type='submit' name='submit'>
+            </form>
+        </div>
+        <div class='main-content'>
+            <fieldset>
+                {% for item in comments %}
+                    <p>{{item.content}} | {{item.created_at}} | <a href='{% url "comment:postLike" %}'>Like</a></p>
+                {% endfor %}
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
