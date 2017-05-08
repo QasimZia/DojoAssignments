@@ -47,3 +47,64 @@
 
 #----------------------------------------------------------------------#
 
+# name = "frobe"
+
+# puts name.capitalize
+
+# puts name
+
+# name.capitalize!
+# puts name
+
+#----------------------------------------------------------------------#
+
+# age = 22
+
+# if age >= 21
+#     puts "Welcome to the party"
+# else
+#     puts "Not yet"
+# end
+
+# unless age < 21
+#     puts "Welcome 2"
+# else 
+#     puts "Not yet"
+# end
+
+# puts "I am positive" if "hello"
+# puts "I am positive" if 24
+# puts "I am negative" unless nil
+# puts "I am negativee" unless false
+
+#----------------------------------------------------------------------#
+
+# i = 0
+# num = 5
+
+# while i < num do
+#     puts "Inside while loop = %d" % i
+#     i += 1
+# end
+
+#----------------------------------------------------------------------#
+
+# for i in 0..5
+#     puts "Value of local variable is #{i}"
+# end
+
+#----------------------------------------------------------------------#
+
+# def helloWorld
+#     puts "Hello World"
+# end
+
+# helloWorld
+
+# def sayHello(name1, name2)
+#     puts "Hello, #{name1} and #{name2}"
+# end
+
+# sayHello("Oscar", "Eduardo")
+
+#----------------------------------------------------------------------#
