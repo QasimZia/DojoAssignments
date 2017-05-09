@@ -50,12 +50,62 @@
 
 #-----------------------------------------------------------#
 
-# def greaterThan(arr, y)
-#     newArr = arr.find_all { |i| i > y }
+# def greater_than(arr, y)
+#     new_arr = arr.find_all { |i| i > y }
 #     count = newArr.length 
 # end
 
-# puts greaterThan([1,3,4], 2)
+# puts greater_than([1,3,4], 2)
 
 #-----------------------------------------------------------#
 
+# def square_arr(arr)
+#     arr = arr.collect{ |i| i*i }
+# end
+
+# p square_arr([1,2,3,4,5])
+
+#-----------------------------------------------------------#
+
+# def remove_negative(arr)
+#     for i in 0...arr.length
+#         if arr[i] < 0
+#             arr[i] = 0
+#         end
+#     end
+#     p arr
+# end
+
+# remove_negative([1,2,3,-4,5,-1])
+
+#-----------------------------------------------------------#
+
+# def average (arr)
+#     sum = 0
+#     avg = 0
+    
+#     arr.each{ |i| sum += i }
+    
+#     avg = sum / arr.length
+# end
+
+# def max_min_avg(arr)
+    
+#     mma = {max: arr.max, min: arr.min, avg: average(arr)}
+
+# end
+
+# puts max_min_avg([1,2,3,4,5,6,7])
+
+#-----------------------------------------------------------#
+
+# def replace_negative(arr)
+#     for i in 0...arr.length
+#         if arr[i] < 0
+#             arr[i] = "Dojo"
+#         end
+#     end
+#     p arr
+# end
+
+# replace_negative([1,2,3,-4,5,-1])
