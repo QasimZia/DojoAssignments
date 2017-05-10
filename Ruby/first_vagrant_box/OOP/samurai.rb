@@ -1,6 +1,6 @@
 require_relative 'human'
 class Samuari < Human
-    @@total_samuari
+    @@total_samurai
 
     def self.get_total_accounts
         @@total_samurai
