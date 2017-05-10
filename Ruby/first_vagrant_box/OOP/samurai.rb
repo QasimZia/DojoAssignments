@@ -13,7 +13,7 @@ class Samurai < Human
 
     def death_blow(obj)
         if obj.class.ancestors.include?(Human)
-            obj.health -= 0
+            obj.health = 0
             true
         else
             false
