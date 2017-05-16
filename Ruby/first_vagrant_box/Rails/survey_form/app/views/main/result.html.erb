@@ -1,0 +1,15 @@
+<fieldset style='background-color: lightseagreen;width:550px;'>
+    <p>Thanks for submitting! You have submitted this form <%= session[:count] += 1 %> times!</p>
+</fieldset>
+<fieldset style='width:550px;'>
+    <legend>Submitted Info</legend>
+    <p>First Name: <%= session[:full_name] %></p>
+    <hr>
+    <p>Location: <%= session[:location] %></p>
+    <hr>
+    <p>Favorite Language: <%= session[:language] %></p>
+    <hr>
+    <p>Comments: <%= session[:comments] %></p>
+    <hr>
+    <a href='/'>Home</a>
+</fieldset>

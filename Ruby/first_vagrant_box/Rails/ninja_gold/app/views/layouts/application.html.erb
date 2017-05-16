@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinjaGold</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrapper {
+            padding: 15px;
+            width: 75%;
+            margin: 0px auto;
+        }
+
+        fieldset {
+            display: inline-block;
+            width: 15%;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+        
+        form {
+            margin: 10px;
+        }
+
+        .activites {
+            width: 78%;
+            height: 150px;
+            position: relative;
+            left: 3px;
+            overflow-y: scroll;
+        }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

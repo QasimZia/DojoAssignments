@@ -1,0 +1,46 @@
+<div class='wrapper'>
+    <p>Your Gold: $<%= session[:gold] %></p>
+    <fieldset>
+        <legend>Farm</legend>
+        <p>Earns 10-20 gold</p>
+        <form action='handle' method='post'>
+            <input type='hidden' name='building' value='farm'>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type='submit' value='Find Gold!'>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Cave</legend>
+        <p>Earns 5-10 gold</p>
+        <form action='handle' method='post'>
+            <input type='hidden' name='building' value='cave'>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type='submit' value='Find Gold!'>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>House</legend>
+        <p>Earns 2-5 gold</p>
+        <form action='handle' method='post'>
+            <input type='hidden' name='building' value='house'>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type='submit' value='Find Gold!'>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>Casino</legend>
+        <p>Earns/Takes 0-50 gold</p>
+        <form action='handle' method='post'>
+            <input type='hidden' name='building' value='casino'>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type='submit' value='Find Gold!'>
+        </form>
+    </fieldset>
+    <fieldset class='activites'>
+        <legend>Activities</legend>
+        <% session[:activity].reverse.each do |item| %>
+            <p><%= item %></p>
+        <% end %>
+    </fieldset> 
+    <a href='clearses'>Clear Session</a>
+</div>
