@@ -1,0 +1,26 @@
+<h1>New Dojo</h1>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <p style='color: red;'><%= error %></p>
+    <% end %>
+<% end %>
+<form action='create' method='post'>
+    <fieldset>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <label for='branch'>Branch: </label>
+        <input type='text' name='branch'>
+        <hr>
+        <label for='street'>Street: </label>
+        <input type='text' name='street'>
+        <hr>
+        <label for='city'>City: </label>
+        <input type='text' name='city'>
+        <hr>
+        <label for='state'>State: </label>
+        <input type='text' name='state'>
+        <hr>
+        <input type='submit'>
+    </fieldset>
+</form>
+
+<a href='/'>Home</a>

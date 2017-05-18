@@ -1,0 +1,23 @@
+<h1>New Student</h1>
+
+<fieldset>
+    <form action='/<%= @dojo.id %>/students' method='post'>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <label for='first_name'>First Name:</label>
+        <input type='text' name='first_name'>
+        <hr>
+        <label for='last_name'>Last Name:</label>
+        <input type='text' name='last_name'>
+        <hr>
+        <label for='email'>Email: </label>
+        <input type='text' name='email'>
+        <label for='dojo'>Dojo: </label>
+        <select name='dojo'>
+            <% @dojos.each do |dojo| %>
+            <option value='<%= dojo.id %>'><%= dojo.branch %></option>
+            <% end %>
+        </select>
+        <hr>
+        <input type='submit'>
+    </form>
+</fieldset>
