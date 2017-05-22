@@ -1,0 +1,20 @@
+<h3>Editing: <%= current_user.name %>'s Information</h3>
+<fieldset style='width:350px; margin: 15px;'>
+    <form action='/users/<%= current_user.id %>/update' method='post'>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="patch">
+        <label for='name' name='name'>Name: </label>
+        <input type='text' name='name' value='<%= current_user.name %>'>
+        <hr>
+        <label for='email'>Email: </label>
+        <input type='text' name='email' value='<%= current_user.email %>'>
+        <hr>
+        <label for='password'>Password: </label>
+        <input type='password' name='password'>
+        <hr>
+        <label for='password_confirmation'>Confirm Password: </label>
+        <input type='password' name='password_confirmation'>
+        <hr>
+        <input type='submit' value='Update'>
+    </form>
+</fieldset>

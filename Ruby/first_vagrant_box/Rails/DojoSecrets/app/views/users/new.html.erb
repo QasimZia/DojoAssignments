@@ -1,0 +1,19 @@
+<fieldset style='width:350px;'>
+    <legend>Sign up</legend>
+    <form action='/users/create' method='post'>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <label for='name'>Name: </label>
+        <input type='text' name='name'>
+        <hr>
+        <label for='email'>Email: </label>
+        <input type='text' name='email'>
+        <hr>
+        <label for='password'>Password: </label>
+        <input type='password' name='password'>
+        <hr>
+        <label for='password_confirmation'>Password Confirmation: </label>
+        <input type='password' name='password_confirmation'>
+        <hr>
+        <input type='submit' value='Sign Up'>
+    </form>
+</fieldset>
