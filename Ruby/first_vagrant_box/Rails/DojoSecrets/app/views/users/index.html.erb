@@ -17,11 +17,19 @@
 <div class='left' style='width:400px; display: inline-block'>
     <h3>Your Secrets</h3>
     <% current_user.secrets.each do |secret| %>
-        <p><%= secret.content %> <a href='/secrets/<%= secret.id %>/destory'>Delete</a></p>
+        <hr>
+        <p><%= secret.content %> <a href='/secrets/<%= secret.id %>/destroy'>Delete</a></p>
+        <p><%= secret.likes.count %> likes</p>    
+        <hr>
     <% end %>
 </div>
 
 <div class='right' style='vertical-align:top; width:400px; display: inline-block'>
     <h3>Secrets Liked</h3>
-
+    <% current_user.secrets_liked.each do |secret| %>
+        <hr>
+        <p><%= secret.content %></p>
+        <p><%= secret.likes.count %> likes</p>
+        <hr>
+    <% end %>
 </div>

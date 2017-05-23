@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   end 
 
   def require_login
-    
+    if(!session[:user_id])
+      redirect_to '/session/new'
+    end
   end
 
   helper_method :current_user

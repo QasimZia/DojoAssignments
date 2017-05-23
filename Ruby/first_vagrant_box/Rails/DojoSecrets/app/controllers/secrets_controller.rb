@@ -1,4 +1,5 @@
 class SecretsController < ApplicationController
+    before_action :require_login
     def index
         @secrets = Secret.all
         @likes = Like.all
@@ -19,5 +20,12 @@ class SecretsController < ApplicationController
 
     def destroy
 
+    end
+
+    def like
+        s = Secret.find(params[:id])
+        Like.create(user: current_user, secret: s)
+
+        redirect_to :back
     end
 end
