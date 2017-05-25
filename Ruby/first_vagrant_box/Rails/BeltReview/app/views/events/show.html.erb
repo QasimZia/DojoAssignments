@@ -1,0 +1,44 @@
+<h4><a href='/events/'>Home</a></h4>
+<h2><%= @event.name %></h2>
+<div class='event-wrapper'>
+    <ul style='list-style:none;'>
+        <li>Host: <%= @event.user.first_name %></li>
+        <li>Date: <%= @event.date %></li>
+        <li>Location: <%= @event.location %> <%= @event.state %></li>
+        <li>Number of people joining: <%= @event.joining_users.count %></li>
+    </ul>
+
+    <fieldset style='overflow-y: scroll; width: 300px; height: 400px;'>
+        <legend>Discussion about this event:</legend>
+        <% @event.comments.each do |comment| %>
+            <p><%= comment.user.first_name  %> says: <%= comment.content %></p>
+            <p>*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*</p>
+        <% end %>
+    </fieldset>
+
+</div>
+<form action='/comment/<%= @event.id %>/create' method='post' style='display:flex; flex-direction: column; align-items:flex-end;'>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <textarea name='content' cols='44' rows='4'></textarea>
+    <hr>
+    <input type='submit' value='Add a Comment'>
+</form>
+<h3>Joiners:</h3>
+<table class='eventshow'>
+    <thead>
+        <tr>
+            <th>Name: </th>
+            <th>Location: </th>
+            <th>State: </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @event.users_joining.each do |user| %>
+            <tr>
+                <td><%= user.first_name %> <%= user.last_name %></td>
+                <td><%= user.location %></td>
+                <td><%= user.state %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

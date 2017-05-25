@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:index, :show, :edit, :update]
+  before_action :require_login, only: [:index, :edit, :update]
   def index
   end
 
@@ -16,9 +16,6 @@ class UsersController < ApplicationController
       flash[:errors] = u.errors.full_messages
       redirect_to '/users/new'
     end
-  end
-
-  def show
   end
 
   def edit
