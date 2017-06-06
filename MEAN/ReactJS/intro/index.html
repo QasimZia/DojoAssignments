@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Test</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+</head>
+<body onload=''>
+    <div id='time'></div>
+    <script>
+        function tick () {
+        
+            ReactDOM.render(
+                React.createElement(),
+                document.getElementById('time')
+            );
+        }
+
+        setInterval(tick, 500);
+
+        // function startTime() {
+        //     timeId = setInterval(getTime, 1000);
+        // }
+
+        // function getTime() {
+        //     document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
+        // }
+        // const myButton = React.createElement('button', null, 'Click Me!');
+        // ReactDOM.render(myButton, document.getElementById('time'));
+    </script>
+</body>
+</html>

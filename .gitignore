@@ -2,3 +2,5 @@
 python/django_projects/beltexam
 ruby/belt/
 ruby/first_vagrant_box/Rails/belt/
+node_modules/
+mean/reactjs/intro/node_modules
