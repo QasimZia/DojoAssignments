@@ -1,13 +1,14 @@
 class VehicleConstructor {
+    
     constructor(name, wheels, passengers, speed) {
         this.speed = speed;
         this.name = name;
         this.wheels = wheels;
         this.passengers = passengers;
-        this._distanceTraveled = 0;
+        var distanceTraveled = 0;
 
         this.getDistanceTraveled = function() {
-            return this._distanceTraveled;
+            return this.distanceTraveled;
         }
     }
 
@@ -17,7 +18,7 @@ class VehicleConstructor {
     }
 
     updateDistanceTraveled() {
-        this._distanceTraveled += this.speed;
+        this.distanceTraveled += this.speed;
         return this;
     }
 
@@ -63,8 +64,8 @@ console.log(bus.passengers);
 
 console.log(bus.checkDistanceTraveled());
 
-bus._distanceTraveled = 15;
+bus.distanceTraveled = 15;
 
-console.log(bus.checkDistanceTraveled());
+console.log(bus.getDistanceTraveled());
 
 // console.log(bus.speed);
