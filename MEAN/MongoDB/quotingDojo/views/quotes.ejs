@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Quotes</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <h1 style='margin: 0px auto;'>Here are awesome quotes!</h1>
+    <div class='quotes-container' style='margin: 0px auto;'>
+        <% for(var i in quotes) { %>
+            <p>"<%= quotes[i].content %>"</p>
+            <p style='margin-left: 20px'>-<%= quotes[i].name %> | <%= quotes[i].createdAt %></p>
+            <hr>
+        <% } %>
+    </div>
+
+    <a href='/'>Home</a>
+
+</body>
+</html>

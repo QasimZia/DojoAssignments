@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Edit Owl</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <fieldset style='width: 500px;'>
+        <legend>Edit Owl | <a href='/'>Go Home</a></legend>
+        <form action='/owls/<%= owl._id %>' method='post'>
+            <label for='name'>Name: </label>
+            <input type='text' name='name' value='<%= owl.name %>'>
+            <br>
+            <label for='color'>Color: </label>
+            <select name='color' value='<%= owl.color %>'>
+                <option value='brown'>Brown</option>
+                <option value='white'>White</option>
+                <option value='black'>Black</option>
+                <option value='grey'>Grey</option>
+            </select>
+            <hr>
+            <label for='age'>Age: </label>
+            <input type='number' name='age' value='<%= owl.age %>'>
+            <hr>
+            <label for='description'>Description: </label>
+            <textarea name='description' rows='4' cols='40' ><%= owl.description %></textarea>
+            <hr>
+            <input type='submit' value='Update'>
+        </form>
+    </fieldset>
+
+</body>
+</html>

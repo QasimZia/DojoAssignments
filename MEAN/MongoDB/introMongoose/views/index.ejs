@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Mongoose Demo</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Add a user</legend>
+        <form action='/users' method='post'>
+        <label for='name'>Name: </label>
+        <input type='text' name='name'>
+        <hr>
+        <label for='age'>Age: </label>
+        <input type='text' name='age'>
+        <hr>
+        <input type='submit'>
+        </form>
+    </fieldset>
+
+    <% for (var i in users) { %>
+        <p><%= users[i].name %></p>
+        <p><%= users[i].age %></p>
+    <% } %>
+
+</body>
+</html>
