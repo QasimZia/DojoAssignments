@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Message Board</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <h2>The Dojo Message Board</h2>
+    <hr>
+    <div class='form-container' style='width: 500px; display: inline-block;'>
+        <form action='/posts' method='post'>
+            <label for='name' name='userName'>Name: </label>
+            <input type='text' name='userName' style='width: 100%'>
+            <br>
+            <label for='content'>Post: </label>
+            <textarea name='content' rows='4' cols='40' style='width: 100%;'></textarea>
+            <br>
+            <input type='submit' style='float: right;'>
+        </form>
+    </div>
+    <hr>
+    <% for(var x in posts) { %>
+        <h3>Name: <%= posts[x].userName %></h3>
+        <h3>Message: <%= posts[x].content %></h3>
+        <hr>
+        <div style='margin-left: 20px;'>
+        <% for(var i = 0; i < posts[x].comments.length; i++) { %>
+            <h4>Name: <%= posts[x].comments[i].userName %></h4>
+            <h4>Comment: <%= posts[x].comments[i].content %></h4>
+            <hr>
+        <% } %>
+            <div style='margin-left: 75px; width: 200px;'>
+                <form action='/posts/<%= posts[x]._id %>' method='post'>
+                    <label for='name' name='userName'>Name: </label>
+                    <input type='text' name='userName' style='width: 100%'>
+                    <br>
+                    <label for='content'>Comment: </label>
+                    <textarea rows='4' cols='40' style='width:100%' name='content'></textarea>
+                    <input type='submit' style='float: right;'>
+                </form>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>
