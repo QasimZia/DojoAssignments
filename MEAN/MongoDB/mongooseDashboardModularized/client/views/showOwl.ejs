@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Owl</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+    <fieldset style='width: 500px;'>
+        <legend><%= owl.name %> | <a href='/'>Home</a></legend>
+        <p>Age: <%= owl.age %></p>
+        <p>Color: <%= owl.color %></p>
+        <p>Description: <%= owl.description %></p>
+        <p style='text-align: right'><a href='/owls/destroy/<%= owl._id %>'>Delete <%= owl.name %></a></p>
+    </fieldset>
+
+</body>
+</html>

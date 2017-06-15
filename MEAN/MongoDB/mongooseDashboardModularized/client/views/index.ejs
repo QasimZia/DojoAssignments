@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Owls</title>
+    <link rel='stylesheet' href=''>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
+        });
+    </script>
+</head>
+<body>
+
+    <div class='container'>
+        <h2>All Owls</h2>
+        <a href='/owls/new'>Add an Owl</a>
+        <hr>
+        <% for(var i in owls) { %>
+            <h4><a href='/owls/<%= owls[i]._id %>'><%= owls[i].name %></a> | <a href='/owls/edit/<%= owls[i]._id %>'>Edit</a></h4>
+            <p style='margin-left: 20px;'>Age: <%= owls[i].age %></p>
+            <p style='margin-left: 20px;'>Color: <%= owls[i].color%></p>
+            <p style='margin-left: 20px;'>Description: <%= owls[i].description %></p>
+            <hr>
+        <% } %>
+        <hr>
+    </div>
+
+</body>
+</html>

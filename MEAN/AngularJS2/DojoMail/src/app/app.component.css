@@ -1,0 +1,18 @@
+.container {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.header {
+    margin: 15px;
+}
+
+th {
+    padding: 20px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 20px;
+    text-align: left;
+}

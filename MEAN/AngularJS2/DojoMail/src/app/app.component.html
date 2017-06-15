@@ -1,0 +1,21 @@
+{{ title }}
+<fieldset [ngClass]="{'container': true}">
+  <h1 [ngClass]="{'header': true}">Dojo Mail</h1>
+  <table>
+    <thead>
+      <th>Email</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let x of emails'>
+        <td>{{ x.email | lowercase }}</td>
+        <td *ngIf='x.importance'>High</td>
+        <td *ngIf='!x.importance'>Low</td>
+        <td>{{ x.subject }}</td>
+        <td>{{ x.content }}</td>
+      </tr>
+    </tbody>
+  </table>
+</fieldset>
