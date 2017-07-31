@@ -1,0 +1,9 @@
+<form (submit)='onSubmit()'>
+    <input type='text' name='firstName' [(ngModel)]='user.firstName'>
+    <input type='text' name='lastName' [(ngModel)]='user.lastName'>
+    <input type='submit'>
+</form>
+
+{{ user | json }}
+<br>
+{{users | json }}

@@ -1,0 +1,5 @@
+<h1>Switchboard</h1>
+
+<div [ngClass]="{'button-container': true}" *ngFor='let x of switches'>
+  <button (click)='changeStatus(x)' [ngStyle]="{'background-color': x.color}">{{ x.value }}</button>
+</div>

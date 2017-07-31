@@ -1,0 +1,13 @@
+<div [ngClass]="{'container': true}">
+  <h1>US Time Zone Display</h1>
+  <fieldset [ngClass]="{'btn-container':true}">
+    <button (click)='pstClicked()' [ngClass]="{'last-clicked': checkStatus[0]}">PST</button>
+    <button (click)='mstClicked()' [ngClass]="{'last-clicked': checkStatus[1]}">MST</button>
+    <button (click)='cstClicked()' [ngClass]="{'last-clicked': checkStatus[2]}">CST</button>
+    <button (click)='estClicked()' [ngClass]="{'last-clicked': checkStatus[3]}">EST</button>
+    <button (click)='resetAll()'>Clear</button>    
+  </fieldset>
+  <fieldset [ngClass]="{'time-container': true}">
+    <p *ngIf='checkStatus'>{{ date }}</p>
+  </fieldset>
+</div>
